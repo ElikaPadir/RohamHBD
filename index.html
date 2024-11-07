@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HBD Roham! </title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9a9e 10%, #fad0c4 100%);
+        font-family: Copperplate, Papyrus, fantasy;
+        overflow: hidden;
+      }
+      .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      h1 {
+        font-size: 2.5em;
+        color: #ff6b6b;
+        margin-bottom: 15px;
+      }
+      p {
+        color: #555;
+      }
+      video {
+        max-width: 500px;
+        height: 500px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h2>Happy Birthday Roham  &#10084;</h2>
+      <p>
+        Thinking of the times we spent together brings a sweet smile on my face!
+      </p>
+      <p>Happy Birthday to a special boy who will always &#10084; </p>
+      <video controls id="birthdayVideo">
+        <source src="./video.mp4" type="video/mp4" />
+      </video>
+
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const container = document.querySelector(".container");
+        const video = document.getElementById("birthdayVideo");
+
+        setTimeout(() => {
+          container.style.opacity = "1";
+          container.style.transform = "scale(1)";
+          container.style.transition = "opacity 1.5s ease, transform 1.5s ease";
+        }, 500);
+
+        video.addEventListener("canplay", () => {
+          video.style.opacity = "1";
+          video.style.transform = "translateY(0)";
+          video.style.transition = "opacity 1.5s ease, transform 1.5s ease";
+        });
+      });
+    </script>
+  </body>
+</html>
